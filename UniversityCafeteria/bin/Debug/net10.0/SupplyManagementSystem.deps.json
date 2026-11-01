@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "SupplyManagementSystem/1.0.0": {
+        "runtime": {
+          "SupplyManagementSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SupplyManagementSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

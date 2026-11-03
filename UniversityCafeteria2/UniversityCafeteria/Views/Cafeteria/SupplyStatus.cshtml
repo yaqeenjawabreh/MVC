@@ -19,6 +19,32 @@
     <link href="~/css/SupplyStatus.css" rel="stylesheet" />
 </head>
 <body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Cafeteria" asp-action="Index">University Cafeteria</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Cafeteria" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Cafeteria" asp-action="Products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Cafeteria" asp-action="Suppliers">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Cafeteria" asp-action="SupplyStatus">Supply Status</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h1>Supply Status</h1>
     <p>This is a simple supply status page.</p>
     <table class="table table-striped">

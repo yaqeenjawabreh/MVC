@@ -1,0 +1,80 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_SupplyRequest.cshtml";
+}
+@using UniversityCafeteria.Models
+@{
+    var items = ViewBag.Draft as List<SupplyItem>;
+    string preferred = ViewBag.Preferred as string;
+
+}
+
+@if (preferred != null)
+{
+    <div class="alert alert-info">Your preferred request priority is @preferred.</div>
+}
+
+<form method="post" action="@Url.Action("SavePreference", "SupplyRequest")">
+    <label>Default Priority</label>
+    <select name="preferredPriority">
+        <option value="Normal" selected="@(preferred == "Normal")">Normal</option>
+        <option value="Urgent" selected="@(preferred == "Urgent")">Urgent</option>
+        <option value="Emergency" selected="@(preferred == "Emergency")">Emergency</option>
+    </select>
+    <button type="submit">Save Preference</button>
+</form>
+<hr />
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["msg"]
+    </div>
+}
+<form method="post" action="@Url.Action("AddItem", "SupplyRequest")">
+    <label>Product Name</label>
+    <input type="text" name="productName" />
+    <br/><br/>
+    <label>Category</label>
+    <input type="text" name="category" />
+    <br /> <br />
+    <label>Quantity</label>
+    <input type="number" name="quantity" />
+    <br /><br />
+    <label>Unit Price</label>
+    <input type="number" name="unitPrice" step="0.01" />
+    <br /><br />
+    <label>Priority</label>
+    <select name="priority">
+        <option value="Normal" selected="@(preferred == "Normal")">Normal</option>
+        <option value="Urgent" selected="@(preferred == "Urgent")">Urgent</option>
+        <option value="Emergency" selected="@(preferred == "Emergency")">Emergency</option>
+    </select>
+    <br /><br />
+    <button type="submit">Add product </button>
+</form>
+<br/><br/><br/>
+<h4>Added Products</h4>
+@if (items == null || items.Count == 0)
+{
+    <p>No products added yet.</p>
+}
+else
+{
+    <table class="table">
+        <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+        @foreach (var item in items)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Total</td>
+            </tr>
+        }
+    </table>
+
+    <a class="btn-main" href="@Url.Action("Review", "SupplyRequest")">Review Request</a>
+<a class="btn-clear" href="@Url.Action("ClearDraft", "SupplyRequest")">Clear Draft</a>
+}

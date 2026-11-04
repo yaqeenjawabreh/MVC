@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_SupplyRequest.cshtml";
+}
+
+
+@using UniversityCafeteria.Models
+@{
+    var request = ViewBag.Request as SupplyRequest;
+}
+
+<h3>Review Supply Request</h3>
+
+<table class="table">
+    <tr><th>Product</th><th>Category</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr>
+    @foreach (var item in request.Items)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Category</td>
+            <td>@item.Quantity</td>
+            <td>@item.UnitPrice JD</td>
+            <td>@item.Total JD</td>
+        </tr>
+    }
+</table>
+
+<p>Subtotal: @request.Subtotal JD</p>
+<p>Preparation Fee (@request.Priority): @request.PreparationFee JD</p>
+<p>Discount: @request.Discount JD</p>
+<h4>Final Total: @request.FinalTotal JD</h4>
+
+<form method="post" action="@Url.Action("ConfirmRequest", "SupplyRequest")">
+    <button type="submit">Confirm Request</button>
+</form>
+<a href="@Url.Action("Index", "SupplyRequest")">Back to add more items</a>

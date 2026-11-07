@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Selected Offers";
+}
+
+<h1>Selected Offers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Supplier</th>
+            <th>Offer Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Graduation Certificates</td>
+            @if (ViewData["COffer"] != null)
+            {
+                <td>@ViewData["CSupplier"]</td>
+                <td>@ViewData["COffer"]</td>
+                <td>@ViewData["CQuantity"]</td>
+                <td>@ViewData["CUnitPrice"] JD</td>
+            }
+            else
+            {
+                <td colspan="4" style="color:gray">Not selected yet</td>
+            }
+        </tr>
+        <tr>
+            <td>Hospitality</td>
+            @if (ViewData["HOffer"] != null)
+            {
+                <td>@ViewData["HSupplier"]</td>
+                <td>@ViewData["HOffer"]</td>
+                <td>@ViewData["HQuantity"]</td>
+                <td>@ViewData["HUnitPrice"] JD</td>
+            }
+            else
+            {
+                <td colspan="4" style="color:gray">Not selected yet</td>
+            }
+        </tr>
+        <tr>
+            <td>Graduation Gifts</td>
+            @if (ViewData["GOffer"] != null)
+            {
+                <td>@ViewData["GSupplier"]</td>
+                <td>@ViewData["GOffer"]</td>
+                <td>@ViewData["GQuantity"]</td>
+                <td>@ViewData["GUnitPrice"] JD</td>
+            }
+            else
+            {
+                <td colspan="4" style="color:gray">Not selected yet</td>
+            }
+        </tr>
+    </tbody>
+</table>
+
+<a href="@Url.Action("SupplyRequest", "GCSM")">Change Selection</a> |
+<a href="@Url.Action("ReviewRequest", "GCSM")">Review Request</a>

@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\views\\gcsm\\selectedoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:views\\gcsm\\selectedoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\views\\gcsm\\supplyrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:views\\gcsm\\supplyrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\views\\gcsm\\reviewrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:views\\gcsm\\reviewrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\controllers\\gcsmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:controllers\\gcsmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\views\\gcsm\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:views\\gcsm\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\models\\academygraduationpreparationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:models\\academygraduationpreparationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|c:\\users\\user\\desktop\\mvc\\academygraduationceremonysupplymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6654AF7B-0E08-3557-51FB-A11A15CC9FBA}|AcademyGraduationCeremonySupplyManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\About.cshtml",
+              "RelativeDocumentMoniker": "Views\\GCSM\\About.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\About.cshtml",
+              "RelativeToolTip": "Views\\GCSM\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T06:46:02.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T06:37:55.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Offer.cs",
+              "RelativeDocumentMoniker": "Models\\Offer.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Offer.cs",
+              "RelativeToolTip": "Models\\Offer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T22:09:15.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "Models\\Supplier.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Supplier.cs",
+              "RelativeToolTip": "Models\\Supplier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T22:09:18.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReviewRequest.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\ReviewRequest.cshtml",
+              "RelativeDocumentMoniker": "Views\\GCSM\\ReviewRequest.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\ReviewRequest.cshtml",
+              "RelativeToolTip": "Views\\GCSM\\ReviewRequest.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T06:47:36.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SelectedOffers.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\SelectedOffers.cshtml",
+              "RelativeDocumentMoniker": "Views\\GCSM\\SelectedOffers.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\SelectedOffers.cshtml*",
+              "RelativeToolTip": "Views\\GCSM\\SelectedOffers.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T06:47:04.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SupplyRequest.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\SupplyRequest.cshtml",
+              "RelativeDocumentMoniker": "Views\\GCSM\\SupplyRequest.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Views\\GCSM\\SupplyRequest.cshtml",
+              "RelativeToolTip": "Views\\GCSM\\SupplyRequest.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T06:46:34.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GCSMController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Controllers\\GCSMController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GCSMController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Controllers\\GCSMController.cs",
+              "RelativeToolTip": "Controllers\\GCSMController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-07T06:33:40.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T22:09:21.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AcademyGraduationPreparationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\AcademyGraduationPreparationDBContext.cs",
+              "RelativeDocumentMoniker": "Models\\AcademyGraduationPreparationDBContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Models\\AcademyGraduationPreparationDBContext.cs",
+              "RelativeToolTip": "Models\\AcademyGraduationPreparationDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T22:08:30.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\MVC\\AcademyGraduationCeremonySupplyManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T21:12:22.12Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

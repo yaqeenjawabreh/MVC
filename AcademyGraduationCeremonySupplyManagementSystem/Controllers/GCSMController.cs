@@ -18,7 +18,6 @@ namespace AcademyGraduationCeremonySupplyManagementSystem.Controllers
         [HttpPost]
         public IActionResult SupplyRequest(string certificate, string hospitality, string gift)
         {
-            // نحفظ فقط اللي اختاره، عشان ما نمسح اختيار سابق
             if (!string.IsNullOrEmpty(certificate))
                 HttpContext.Session.SetString("Certificate", certificate);
 
@@ -50,7 +49,6 @@ namespace AcademyGraduationCeremonySupplyManagementSystem.Controllers
             string? h = HttpContext.Session.GetString("Hospitality");
             string? g = HttpContext.Session.GetString("Gift");
 
-            // لازم الثلاثة يكونوا مختارين
             if (c == null || h == null || g == null)
             {
                 TempData["Error"] = "You must select one offer from each category before reviewing.";
@@ -78,7 +76,6 @@ namespace AcademyGraduationCeremonySupplyManagementSystem.Controllers
             return View();
         }
 
-        // تجيب بيانات العرض حسب الحرف، وتحطها في ViewData، وترجع إجمالي العرض
         private double FillOffer(string code, string prefix)
         {
             string supplier = "", offer = "";

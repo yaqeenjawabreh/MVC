@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using task6.Models;
+@model Product
+
+@using (Html.BeginForm("Create","Product",FormMethod.Post))
+{   <div>
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+   </div>
+   <div>
+@Html.LabelFor(model => model.Price)
+    @Html.TextBoxFor(model => model.Price)
+   </div>
+   <div>
+    @Html.LabelFor(model => model.Quantity)
+    @Html.TextBoxFor(model => model.Quantity)
+   </div>
+   <div>
+    @Html.LabelFor(model => model.CategoryId)
+    @Html.TextBoxFor(model => model.CategoryId)
+   </div>
+   <div>
+    @Html.LabelFor(model => model.SupplierId)
+   @Html.TextBoxFor(model => model.SupplierId)
+   </div>
+   <div>
+    <input type="submit" value="Create" />
+   </div>
+  
+
+    
+}

@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using task6.Models;
+@model Supplier
+
+@using (Html.BeginForm("Create", "Supplier", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.phone
+)
+        @Html.TextBoxFor(model => model.phone)
+    </div>
+<div>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+}

@@ -1,9 +1,9 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@* For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 *@
 @using task6.Models;
 @model IEnumerable<Product>
-<a href="@Url.Action("Create", "Product")" class="btn btn-primary">Create New Product</a>
+
+<a href="@Url.Action("Create", "Product")" class="btn btn-primary mb-3">Create New Product</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -13,18 +13,30 @@
             <th>Quantity</th>
             <th>Category</th>
             <th>Supplier</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var product in Model)
-        {
+        {  
             <tr>
-                <td>@product.Id</td>
+                <td>@product.Id</td>   
                 <td>@product.Name</td>
                 <td>@product.Price</td>
-                <td>@product.Quantity</td>
-                <td>@product.CategoryId</td>
-                <td>@product.SupplierId</td>
+                <td>
+                    @product.Quantity
+                    @if (product.Quantity < 5)
+                    {
+                        <span class="badge bg-danger ms-2">Low Stock</span>
+                    }
+                </td>
+                <td>@(product.Category != null ? product.Category.Name : "N/A")</td>
+                <td>@(product.Supplier != null ? product.Supplier.Name : "N/A")</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Product", new { id = product.Id })" class="btn btn-primary btn-sm m-1">Edit</a> 
+                    <a href="@Url.Action("Details", "Product", new { id = product.Id })" class="btn btn-secondary btn-sm m-1">Details</a>
+                    <a href="@Url.Action("Delete", "Product", new { id = product.Id })" class="btn btn-danger btn-sm m-1" onclick="return confirm('Are you sure you want to delete @product.Name?');">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

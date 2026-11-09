@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using task6.Data;
 using task6.Models;
 namespace task6.Controllers
@@ -12,7 +13,7 @@ namespace task6.Controllers
         }
         public IActionResult Index()
         {   
-            var Suppliers = _context.Suppliers.ToList();
+            var Suppliers = _context.Suppliers.Include(s=>s.Products).ToList();
             return View(Suppliers);
         }
 
@@ -26,6 +27,33 @@ namespace task6.Controllers
         public IActionResult Create(Supplier supplier)
         {
             _context.Suppliers.Add(supplier);
+            _context.SaveChanges();
+            return RedirectToAction("index");
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var suppler = _context.Suppliers.Find(id);
+            return View(suppler);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Supplier supplier)
+        {
+            _context.Suppliers.Update(supplier);
+            _context.SaveChanges();
+            return RedirectToAction("index");
+        }
+
+        public IActionResult Details(int id) {
+            var supplier = _context.Suppliers.Find(id);
+            return View(supplier);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var supplier = _context.Suppliers.Find(id);
+            _context.Suppliers.Remove(supplier);
             _context.SaveChanges();
             return RedirectToAction("index");
         }

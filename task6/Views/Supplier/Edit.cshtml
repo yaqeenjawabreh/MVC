@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@* For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 *@
+@model Supplier
+
+<h2>Edit Supplier</h2>
+
+<form method="post" action="@Url.Action("Edit")">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Supplier Name</label>
+        <input type="text" name="Name" value="@Model.Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="text" name="phone" value="@Model.phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" name="Email" value="@Model.Email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<br>
+<a href="@Url.Action("Index", "Supplier")" class="btn btn-dark">Back to List</a>

@@ -244,6 +244,71 @@ namespace task6.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("task6.Models.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("HierDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("task6.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("task6.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -352,6 +417,17 @@ namespace task6.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("task6.Models.Order", b =>
+                {
+                    b.HasOne("task6.Models.Employee", "Employee")
+                        .WithMany("Orders")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("task6.Models.Product", b =>
                 {
                     b.HasOne("task6.Models.Category", "Category")
@@ -374,6 +450,11 @@ namespace task6.Data.Migrations
             modelBuilder.Entity("task6.Models.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("task6.Models.Employee", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("task6.Models.Supplier", b =>

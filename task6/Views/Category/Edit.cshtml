@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Category
+<form method="post" action="@Url.Action("Edit")">
+    <input type="hidden" name="@Model.Id" value="@Model.Id"><br>
+    <label>Category Name</label>
+    <input type="text" name="Name" value="@Model.Name">
+    <br><br/>
+
+    <label>Description</label>
+    <input type="text" name="Description" value="@Model.Description">
+    <br><br>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+    <a href="@Url.Action("Index","Category")" class="btn btn-dark">Back to home</a>

@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@* For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 *@
+@model Product
+
+<h2>Edit Product</h2>
+
+<form method="post" action="@Url.Action("Edit")">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input type="text" name="Name" value="@Model.Name" class="form-control" />
+    </div>
+
+    
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" step="0.01" name="Price" value="@Model.Price" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input type="number" name="Quantity" value="@Model.Quantity" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select name="CategoryId" class="form-control">
+            @foreach (var cat in ViewBag.Categories)
+            {
+                if (cat.Id == Model.CategoryId)
+                {
+                    <option value="@cat.Id" selected="selected">@cat.Name</option>
+                }
+                else
+                {
+                    <option value="@cat.Id">@cat.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Supplier</label>
+        <select name="SupplierId" class="form-control">
+            @foreach (var sup in ViewBag.Suppliers)
+            {
+                if (sup.Id == Model.SupplierId)
+                {
+                    <option value="@sup.Id" selected="selected">@sup.Name</option>
+                }
+                else
+                {
+                    <option value="@sup.Id">@sup.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<br>
+<a href="@Url.Action("Index", "Product")" class="btn btn-dark">Back to List</a>

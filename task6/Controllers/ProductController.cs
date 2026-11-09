@@ -20,6 +20,8 @@ namespace task6.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Suppliers = _context.Suppliers.ToList();
+            ViewBag.Categories = _context.Categories.ToList();
             return View();
         }
 

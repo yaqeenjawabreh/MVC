@@ -1,128 +1,49 @@
-﻿@{
+﻿@using AcademyGraduationCeremonySupplyManagementSystem.Models;
+@model List<OfferNew>
+@{
     ViewData["Title"] = "Create Supply Request";
 }
 
 <h1>Create Supply Request</h1>
-<p>Select one offer from each category, then click "Save Selection".</p>
+<p>Select one offer from each category.</p>
 
 @if (TempData["Error"] != null)
 {
     <p style="color:red">@TempData["Error"]</p>
 }
 
-<form method="post" action="@Url.Action("SupplyRequest", "GCSM")">
-
-    <h2>Category 1: Graduation Certificates</h2>
+@foreach (var category in new[] { "GraduationCertificates", "Hospitality", "GraduationGifts" })
+{
+    <h2>@category</h2>
     <table class="table">
         <thead>
             <tr>
-                <th>Select</th>
                 <th>Supplier</th>
                 <th>Offer Name</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><input type="radio" name="certificate" value="A" /></td>
-                <td>Supplier A</td>
-                <td>Premium Certificate Package</td>
-                <td>35</td>
-                <td>2 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="certificate" value="B" /></td>
-                <td>Supplier B</td>
-                <td>Standard Certificate Package</td>
-                <td>35</td>
-                <td>1.5 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="certificate" value="C" /></td>
-                <td>Supplier C</td>
-                <td>Luxury Certificate Package</td>
-                <td>35</td>
-                <td>2.5 JD</td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.Category == category)
+                {
+                    <tr>
+                        <td>@item.Supply</td>
+                        <td>@item.OfferName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.UnitPrice JD</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm"
+                               href="@Url.Action("SelectedOffers", "GCSM", new { id = item.OfferId })">Select</a>
+                        </td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
+}
 
-    <h2>Category 2: Hospitality</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Select</th>
-                <th>Supplier</th>
-                <th>Offer Name</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="radio" name="hospitality" value="D" /></td>
-                <td>Supplier D</td>
-                <td>Coffee &amp; Drinks Package</td>
-                <td>100</td>
-                <td>2 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="hospitality" value="E" /></td>
-                <td>Supplier E</td>
-                <td>Sandwiches &amp; Snacks Package</td>
-                <td>100</td>
-                <td>3 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="hospitality" value="F" /></td>
-                <td>Supplier F</td>
-                <td>Full Hospitality Package</td>
-                <td>100</td>
-                <td>4 JD</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Category 3: Graduation Gifts</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Select</th>
-                <th>Supplier</th>
-                <th>Offer Name</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="radio" name="gift" value="G" /></td>
-                <td>Supplier G</td>
-                <td>Customized Mugs Package</td>
-                <td>35</td>
-                <td>2 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="gift" value="H" /></td>
-                <td>Supplier H</td>
-                <td>Graduation Bags Package</td>
-                <td>35</td>
-                <td>3 JD</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="gift" value="I" /></td>
-                <td>Supplier I</td>
-                <td>Premium Gift Boxes Package</td>
-                <td>35</td>
-                <td>4 JD</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <input type="submit" value="Save Selection" class="btn btn-primary" />
-</form>
-
-<br />
-<a href="@Url.Action("SelectedOffers", "GCSM")">View Selected Offers</a> |
-<a href="@Url.Action("ReviewRequest", "GCSM")">Review Request</a>
+<a href="@Url.Action("ReviewRequest", "GCSM")" class="btn btn-success">Review Request</a>

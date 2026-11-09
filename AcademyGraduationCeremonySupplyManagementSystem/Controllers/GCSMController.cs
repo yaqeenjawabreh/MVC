@@ -1,9 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AcademyGraduationCeremonySupplyManagementSystem.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AcademyGraduationCeremonySupplyManagementSystem.Controllers
 {
     public class GCSMController : Controller
     {
+        static List<OfferNew> offers = new List<OfferNew>
+        {
+            new OfferNew { OfferId = 1, Category = "GraduationCertificates", Supply = "Supplier A", OfferName = "Premium Certificate Package",  Quantity = 35,  UnitPrice = 2 },
+            new OfferNew { OfferId = 2, Category = "GraduationCertificates", Supply = "Supplier B", OfferName = "Standard Certificate Package", Quantity = 35,  UnitPrice = 1.5 },
+            new OfferNew { OfferId = 3, Category = "GraduationCertificates", Supply = "Supplier C", OfferName = "Luxury Certificate Package",   Quantity = 35,  UnitPrice = 2.5 },
+            new OfferNew { OfferId = 4, Category = "Hospitality",            Supply = "Supplier D", OfferName = "Coffee & Drinks Package",      Quantity = 100, UnitPrice = 2 },
+            new OfferNew { OfferId = 5, Category = "Hospitality",            Supply = "Supplier E", OfferName = "Sandwiches & Snacks Package",  Quantity = 100, UnitPrice = 3 },
+            new OfferNew { OfferId = 6, Category = "Hospitality",            Supply = "Supplier F", OfferName = "Full Hospitality Package",     Quantity = 100, UnitPrice = 4 },
+            new OfferNew { OfferId = 7, Category = "GraduationGifts",        Supply = "Supplier G", OfferName = "Customized Mugs Package",      Quantity = 35,  UnitPrice = 2 },
+            new OfferNew { OfferId = 8, Category = "GraduationGifts",        Supply = "Supplier H", OfferName = "Graduation Bags Package",      Quantity = 35,  UnitPrice = 3 },
+            new OfferNew { OfferId = 9, Category = "GraduationGifts",        Supply = "Supplier I", OfferName = "Premium Gift Boxes Package",   Quantity = 35,  UnitPrice = 4 }
+        };
+
         public IActionResult About()
         {
             return View();
@@ -12,98 +26,85 @@ namespace AcademyGraduationCeremonySupplyManagementSystem.Controllers
         [HttpGet]
         public IActionResult SupplyRequest()
         {
-            return View();
+            return View(offers);
         }
 
-        [HttpPost]
-        public IActionResult SupplyRequest(string certificate, string hospitality, string gift)
+        public IActionResult SelectedOffers(int id)
         {
-            if (!string.IsNullOrEmpty(certificate))
-                HttpContext.Session.SetString("Certificate", certificate);
+            ViewBag.OfferId = id;
 
-            if (!string.IsNullOrEmpty(hospitality))
-                HttpContext.Session.SetString("Hospitality", hospitality);
+            var offer = offers.FirstOrDefault(x => x.OfferId == id);
 
-            if (!string.IsNullOrEmpty(gift))
-                HttpContext.Session.SetString("Gift", gift);
+            if (offer == null)
+            {
+                return RedirectToAction("SupplyRequest");
+            }
 
-            return RedirectToAction("SelectedOffers");
-        }
+            var categoryName = "";
+            if (offer.Category == "GraduationCertificates")
+            {
+                categoryName = "GraduationCertificates";
+            }
+            else if (offer.Category == "Hospitality")
+            {
+                categoryName = "Hospitality";
+            }
+            else if (offer.Category == "GraduationGifts")
+            {
+                categoryName = "GraduationGifts";
+            }
 
-        public IActionResult SelectedOffers()
-        {
-            string? c = HttpContext.Session.GetString("Certificate");
-            string? h = HttpContext.Session.GetString("Hospitality");
-            string? g = HttpContext.Session.GetString("Gift");
+            HttpContext.Session.SetString(
+                categoryName,
+                System.Text.Json.JsonSerializer.Serialize(offer)
+            );
 
-            if (c != null) FillOffer(c, "C");
-            if (h != null) FillOffer(h, "H");
-            if (g != null) FillOffer(g, "G");
-
-            return View();
+            return View(offer);
         }
 
         public IActionResult ReviewRequest()
         {
-            string? c = HttpContext.Session.GetString("Certificate");
-            string? h = HttpContext.Session.GetString("Hospitality");
-            string? g = HttpContext.Session.GetString("Gift");
+            string? certificateJson = HttpContext.Session.GetString("GraduationCertificates");
+            string? hospitalityJson = HttpContext.Session.GetString("Hospitality");
+            string? giftsJson = HttpContext.Session.GetString("GraduationGifts");
 
-            if (c == null || h == null || g == null)
+            if (certificateJson == null || hospitalityJson == null || giftsJson == null)
             {
                 TempData["Error"] = "You must select one offer from each category before reviewing.";
                 return RedirectToAction("SupplyRequest");
             }
 
-            double totalPrice = FillOffer(c, "C") + FillOffer(h, "H") + FillOffer(g, "G");
+            var GraduationCertificates = System.Text.Json.JsonSerializer.Deserialize<OfferNew>(certificateJson);
+            var Hospitality = System.Text.Json.JsonSerializer.Deserialize<OfferNew>(hospitalityJson);
+            var GraduationGifts = System.Text.Json.JsonSerializer.Deserialize<OfferNew>(giftsJson);
 
-            double discountPercentage;
-            if (totalPrice > 500)
-                discountPercentage = 0.15;
-            else if (totalPrice > 300)
-                discountPercentage = 0.10;
+            var newOfferList = new List<OfferNew>
+            { GraduationCertificates, Hospitality, GraduationGifts };
+
+            decimal total = 0;
+            foreach (var item in newOfferList)
+            {
+                item.Total = item.Quantity * (decimal)item.UnitPrice;
+                total += item.Total;
+            }
+
+            decimal discountPercentage;
+            if (total > 500)
+                discountPercentage = 0.15m;
+            else if (total > 300)
+                discountPercentage = 0.10m;
             else
                 discountPercentage = 0;
 
-            double discountAmount = totalPrice * discountPercentage;
-            double finalTotal = totalPrice - discountAmount;
+            decimal discountAmount = total * discountPercentage;
+            decimal finalTotal = total - discountAmount;
 
-            ViewBag.TotalPrice = totalPrice;
+            ViewBag.Total = total;
             ViewBag.DiscountPercentage = discountPercentage * 100;
             ViewBag.DiscountAmount = discountAmount;
             ViewBag.FinalTotal = finalTotal;
 
-            return View();
-        }
-
-        private double FillOffer(string code, string prefix)
-        {
-            string supplier = "", offer = "";
-            int quantity = 0;
-            double unitPrice = 0;
-
-            switch (code)
-            {
-                case "A": supplier = "Supplier A"; offer = "Premium Certificate Package"; quantity = 35; unitPrice = 2; break;
-                case "B": supplier = "Supplier B"; offer = "Standard Certificate Package"; quantity = 35; unitPrice = 1.5; break;
-                case "C": supplier = "Supplier C"; offer = "Luxury Certificate Package"; quantity = 35; unitPrice = 2.5; break;
-                case "D": supplier = "Supplier D"; offer = "Coffee & Drinks Package"; quantity = 100; unitPrice = 2; break;
-                case "E": supplier = "Supplier E"; offer = "Sandwiches & Snacks Package"; quantity = 100; unitPrice = 3; break;
-                case "F": supplier = "Supplier F"; offer = "Full Hospitality Package"; quantity = 100; unitPrice = 4; break;
-                case "G": supplier = "Supplier G"; offer = "Customized Mugs Package"; quantity = 35; unitPrice = 2; break;
-                case "H": supplier = "Supplier H"; offer = "Graduation Bags Package"; quantity = 35; unitPrice = 3; break;
-                case "I": supplier = "Supplier I"; offer = "Premium Gift Boxes Package"; quantity = 35; unitPrice = 4; break;
-            }
-
-            double total = quantity * unitPrice;
-
-            ViewData[prefix + "Supplier"] = supplier;
-            ViewData[prefix + "Offer"] = offer;
-            ViewData[prefix + "Quantity"] = quantity;
-            ViewData[prefix + "UnitPrice"] = unitPrice;
-            ViewData[prefix + "Total"] = total;
-
-            return total;
+            return View(newOfferList);
         }
     }
 }

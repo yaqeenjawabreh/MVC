@@ -17,14 +17,23 @@
     @Html.LabelFor(model => model.Quantity)
     @Html.TextBoxFor(model => model.Quantity)
    </div>
+  <div>
+        <select name="SupplierId">
+            @foreach (var item in ViewBag.Suppliers)
+            {
+                <option value="@item.Id">@item.Name</option>                
+            }
+        </select>
+
+  </div>
    <div>
-    @Html.LabelFor(model => model.CategoryId)
-    @Html.TextBoxFor(model => model.CategoryId)
-   </div>
-   <div>
-    @Html.LabelFor(model => model.SupplierId)
-   @Html.TextBoxFor(model => model.SupplierId)
-   </div>
+        <select name="CategoryId">
+            @foreach (var item in ViewBag.Categories){
+             <option value="@item.Id">@item.Name</option>
+        }
+      </select>
+
+  </div>
    <div>
     <input type="submit" value="Create" />
    </div>
